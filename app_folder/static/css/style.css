@@ -1,0 +1,93 @@
+.container {
+    padding: 1%;
+    margin: 1%;
+    height: 2000px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+}
+
+.tx_contain {
+    padding: 0.5%;
+    margin: 0.5%;
+    background-image: url("../img/oil.jpg");
+    height: 30%;
+    display: inline-block;
+    width: 100%;
+}
+
+.middle_contain {
+    padding: 0.5%;
+    margin: 0.5%;
+    background-image: url("../img/water.jpg");
+    height: 30%;
+    display: inline-block;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.pi_contain {
+    /* display: flex; */
+    width: 80%;
+    display: inline-block;
+    /* background-color: green; */
+}
+
+#risk_table {
+    border: 1px solid black;
+    /* add border around the table */
+    width: 100%;
+    /* remove the 'width' attribute from the table */
+    font-size: 16px;
+}
+
+#risk_table th,
+#risk_table td {
+    border: 1px solid black;
+    /* add border around each cell */
+    padding: 10px;
+    /* add some padding to the cells */
+    font-size: 1em;
+    width: 100%;
+}
+
+.risk_contain {
+    background-color: white;
+    width: 20%;
+    /* border: 1px solid white; add border around the container */
+    text-align: center;
+    border-collapse: collapse;
+    /* height: 100; adjust the height to your preference */
+    overflow-y: auto;
+}
+
+@media (max-width: 1600px) {
+
+    #risk_table td,
+    #risk_table th {
+        font-size: 0.6em;
+        /* reduce font size for smaller viewports */
+    }
+}
+
+@media (max-width: 1100px) {
+
+    #risk_table td,
+    #risk_table th {
+        font-size: 0.5em;
+        /* reduce font size for smaller viewports */
+    }
+}
+
+img {
+    max-width: 96%;
+    height: auto;
+    display: block;
+    padding: 0.5%;
+    background-color: black;
+    margin: 0 auto;
+}

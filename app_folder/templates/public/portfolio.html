@@ -1,0 +1,48 @@
+{% extends 'public/public_base.html'%}
+
+{%block title%}Chart{%endblock title%}
+
+{%block main%}
+<title>Portfolio</title>
+
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+<div class="container">
+    <div class="tx_contain">
+        <div>{{daily_tx_plot|safe}}</div>
+    </div>
+    <div class="middle_contain">
+        <div class="pi_contain">
+            <div>{{pie_sub_plots|safe}}</div>
+        </div>
+        <div class="risk_contain">
+            <table id="risk_table" cellpadding="0" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Customer</th>
+                        <th>Customer_Strikes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in high_customer %}
+                    <tr>
+                        <td>{{ row.Customer }}</td>
+                        <td>{{ row.Customer_Strikes }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="tx_contain">
+        <div>{{monthly_low_plot|safe}}</div>
+    </div>
+</div>
+
+<img src="../../static/img/EissaHaidar_Resume_2023.jpg" alt="JPG of Eissa Haidar's Resume">
+
+<object data="document.pdf" type="application/pdf" width="600" height="800">
+    <p>Sorry, your browser doesn't support embedded PDFs. You can <a href="document.pdf">download the PDF</a> instead.</p>
+</object>
+
+{%endblock main%}
