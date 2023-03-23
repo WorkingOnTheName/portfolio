@@ -12,7 +12,7 @@
 .tx_contain {
     padding: 0.5%;
     margin: 0.5%;
-    background-image: url("../img/oil.jpg");
+    background-image: url("../img/darkblue.jpg");
     height: 30%;
     display: inline-block;
     width: 100%;
@@ -21,7 +21,7 @@
 .middle_contain {
     padding: 0.5%;
     margin: 0.5%;
-    background-image: url("../img/water.jpg");
+    background-image: url("../img/darkblue.jpg");
     height: 30%;
     display: inline-block;
     width: 100%;
@@ -83,11 +83,13 @@
     }
 }
 
-img {
-    max-width: 96%;
-    height: auto;
+#pdf-iframe {
+    margin: 0 auto;
     display: block;
     padding: 0.5%;
-    background-color: black;
-    margin: 0 auto;
+    width: 96%;
+    height: 100%;
+    border: none;
+    background-color: red;
+    background-image: url("../img/darkblue.jpg");
 }

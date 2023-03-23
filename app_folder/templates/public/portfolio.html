@@ -39,10 +39,17 @@
     </div>
 </div>
 
-<img src="../../static/img/EissaHaidar_Resume_2023.jpg" alt="JPG of Eissa Haidar's Resume">
+<iframe id="pdf-iframe" src="../../static/pdf/EissaHaidar_Resume.pdf"></iframe>
 
-<object data="document.pdf" type="application/pdf" width="600" height="800">
-    <p>Sorry, your browser doesn't support embedded PDFs. You can <a href="document.pdf">download the PDF</a> instead.</p>
-</object>
-
+<script>
+    const iframe = document.getElementById("pdf-iframe");
+    function resizeIframe() {
+        const width = iframe.offsetWidth;
+        const height = Math.floor(((width) * 1.3)); // 130% of width in pixels
+        iframe.style.height = `${Math.min(height, 1370)}px`; // set iframe height to the minimum of calculated height and maximum height of 1370px
+    }
+    // Call resizeIframe() when the page loads and when the window is resized
+    window.addEventListener("load", resizeIframe);
+    window.addEventListener("resize", resizeIframe);
+</script>
 {%endblock main%}
