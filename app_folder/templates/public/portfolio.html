@@ -1,29 +1,38 @@
+<!-- Start the html file by telling it to look for its base file which is in
+the same directory as the potfolio.html file in this case. This file will take
+everything in the base template and put it in here, and in addition insert the
+code below into the appropriate blocks for positioning in the file. -->
 {% extends 'public/public_base.html'%}
-
-{%block title%}Chart{%endblock title%}
 
 {%block main%}
 <title>Portfolio</title>
-
+<!-- The plotly script to run when we load the web page -->
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
 <div class="container">
-    <div class="tx_contain">
+    <div class="tb_contain">
+        <!-- The plotly daily transaction plot being inserted from views.py -->
         <div>{{daily_tx_plot|safe}}</div>
     </div>
     <div class="middle_contain">
         <div class="pi_contain">
+            <!-- pie subplots inserted from views.py -->
             <div>{{pie_sub_plots|safe}}</div>
         </div>
         <div class="risk_contain">
+            <!-- high risk customers generated based on the dataframe 
+                high_customers that was passed from views.py  -->
             <table id="risk_table" cellpadding="0" cellspacing="0">
                 <thead>
                     <tr>
+                        <!-- the two collumn headers -->
                         <th>Customer</th>
                         <th>Customer_Strikes</th>
                     </tr>
                 </thead>
                 <tbody>
+                    <!-- for loop populating each row of the table with the
+                    data inside high_customer dataframe -->
                     {% for row in high_customer %}
                     <tr>
                         <td>{{ row.Customer }}</td>
@@ -34,19 +43,24 @@
             </table>
         </div>
     </div>
-    <div class="tx_contain">
+    <div class="tb_contain">
+        <!-- The low performing locations plot from views.py -->
         <div>{{monthly_low_plot|safe}}</div>
     </div>
 </div>
-
+<!-- My resume pdf being inserted into the webpage below the plotly charts -->
 <iframe id="pdf-iframe" src="../../static/pdf/EissaHaidar_Resume.pdf"></iframe>
-
+<!-- The script that resizes the iframe object and maintains the poper ratio
+as an A4 sheet of paper. -->
 <script>
     const iframe = document.getElementById("pdf-iframe");
     function resizeIframe() {
         const width = iframe.offsetWidth;
-        const height = Math.floor(((width) * 1.3)); // 130% of width in pixels
-        iframe.style.height = `${Math.min(height, 1370)}px`; // set iframe height to the minimum of calculated height and maximum height of 1370px
+        // 130% of width in pixels
+        const height = Math.floor(((width) * 1.3));
+        // set iframe height to the minimum of calculated height and maximum 
+        // height of 1370px
+        iframe.style.height = `${Math.min(height, 1370)}px`;
     }
     // Call resizeIframe() when the page loads and when the window is resized
     window.addEventListener("load", resizeIframe);

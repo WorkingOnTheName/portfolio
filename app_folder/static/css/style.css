@@ -1,3 +1,9 @@
+/* This is the stle sheet which targets certain classes or ID's and styles
+them according to the properties listed within the curly braces */
+
+/* This is the container that has three containers within it one is tb_contain
+which is the top and bottom of the three stacked containers, and the middle is
+called middle contain.*/
 .container {
     padding: 1%;
     margin: 1%;
@@ -9,7 +15,10 @@
     text-align: center;
 }
 
-.tx_contain {
+/* This is the container used for the top plot which would be the daily sum of
+each location in a scatter plot. This container is also used for the bottom
+plot which would be the bar chart of all the lowest performing locations.*/
+.tb_contain {
     padding: 0.5%;
     margin: 0.5%;
     background-image: url("../img/darkblue.jpg");
@@ -18,6 +27,9 @@
     width: 100%;
 }
 
+/* This container is sandwietched between the two tb_containers. This houses
+the two piecharts in the form of a subplot and the html table of the high risk
+customers.*/
 .middle_contain {
     padding: 0.5%;
     margin: 0.5%;
@@ -30,41 +42,46 @@
     align-items: stretch;
 }
 
+/* This container is for the pie subplot plotly object that is sitting side by
+side with the html risk table object. This container is where we insert our pie
+charts into. This container is allocating most of the space in the middle
+container to the two pie plots within.*/
 .pi_contain {
-    /* display: flex; */
     width: 80%;
     display: inline-block;
-    /* background-color: green; */
 }
 
+/* This is the container which is on the right side of the pi_contain and
+houses the high risk customers html table. This is giving most of the
+space to the pie charts and telling the html table to get a scroll bar if its
+too long for the height of the middle container.*/
+.risk_contain {
+    background-color: white;
+    width: 20%;
+    text-align: center;
+    border-collapse: collapse;
+    overflow-y: auto;
+}
+
+/* The next two tags are tergeting the high risk customers table and the cells
+within that table. we are giving them a black border and telling them to spread
+to the max size of the container they are in.*/
 #risk_table {
     border: 1px solid black;
-    /* add border around the table */
     width: 100%;
-    /* remove the 'width' attribute from the table */
     font-size: 16px;
 }
-
 #risk_table th,
 #risk_table td {
     border: 1px solid black;
-    /* add border around each cell */
     padding: 10px;
-    /* add some padding to the cells */
     font-size: 1em;
     width: 100%;
 }
 
-.risk_contain {
-    background-color: white;
-    width: 20%;
-    /* border: 1px solid white; add border around the container */
-    text-align: center;
-    border-collapse: collapse;
-    /* height: 100; adjust the height to your preference */
-    overflow-y: auto;
-}
-
+/* The two media tags are telling the risk table to decrease its font size if
+the size of the browser window reaches a certain size. If the browser window
+shrinks the font size becomes smaller so that the table can also shrink. */
 @media (max-width: 1600px) {
 
     #risk_table td,
@@ -73,7 +90,6 @@
         /* reduce font size for smaller viewports */
     }
 }
-
 @media (max-width: 1100px) {
 
     #risk_table td,
@@ -83,6 +99,9 @@
     }
 }
 
+/* This is giving a basic sizing for the pdf file which is my resume. Most of
+the resizing magic happens in the html file with a js script that maintains a
+length to width ratio which is the same as an A4 sheet of paper. */
 #pdf-iframe {
     margin: 0 auto;
     display: block;
@@ -90,6 +109,5 @@
     width: 96%;
     height: 100%;
     border: none;
-    background-color: red;
     background-image: url("../img/water.jpg");
 }
