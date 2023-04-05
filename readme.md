@@ -8,16 +8,18 @@ streamlined to highlight my skills and not be too repetitive.
 
 ### Technologies Implemented
 
--Python
--CSS
--HTML
--Flask
--SQLAlchemy
--PostgreSQL
--Google Cloud
--NGINX
--uWSGI
--Linux Terminal
+- Python
+- CSS
+- HTML
+- Flask
+- SQLAlchemy
+- PostgreSQL
+- Google Cloud
+- NGINX
+- uWSGI
+- Linux Terminal
+
+![screenshot of the website](/app/app_folder/static/img/charts.png)
 
 ### The Process of Setting Up This Flask Web Application
 
@@ -63,7 +65,7 @@ pyenv global 3.10.6
 #now clow the project in the home dorectory
 cd ~/
 
-git clone https://github.com/WorkingOnTheName/Portfolio.git
+git clone git clone git@github.com:WorkingOnTheName/portfolio.git
 ```
 8. Creating a virtual environment and installing depandancies for the app
 ```sh
