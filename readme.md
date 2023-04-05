@@ -3,8 +3,8 @@
 This project is a portfolio designed to showcase my backend and front end 
 abilities as well as my operations proficinecy. In essence it is a mock version
 of a web application I built to help visualize data for a business. All data in
-this portfolio is fake and randomized. The portfolio is also simpler and
-streamlined to highlight my skills and not be too repetitive.
+this portfolio is fake and randomized. The portfolio is a simpler and
+streamlined version to highlight my skills and not be too repetitive.
 
 ### Technologies Implemented
 
