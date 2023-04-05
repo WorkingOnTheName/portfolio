@@ -19,7 +19,7 @@ streamlined to highlight my skills and not be too repetitive.
 - uWSGI
 - Linux Terminal
 
-![screenshot of the website](/app/app_folder/static/img/charts.png)
+![screenshot of the website](app_folder/static/img/charts.png)
 
 ### The Process of Setting Up This Flask Web Application
 
