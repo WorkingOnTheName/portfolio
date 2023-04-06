@@ -23,20 +23,17 @@ streamlined version to highlight my skills and not be too repetitive.
 
 ### The Process of Setting Up This Flask Web Application
 
-1. Create Flask Web Application (run.py, config.py, __init__.py, views.py, html
- templates, CSS, etc.)
+# 1. Create Flask Web Application (run.py, config.py, __init__.py, views.py, html templates, CSS, etc.)
 
-2. `pip freeze > requirements.txt` so that all dependancies for the flask web 
-app can be installed on the Virtual Machine when we import the project from 
-github
+# 2. `pip freeze > requirements.txt` so that all dependancies for the flask web app can be installed on the Virtual Machine when we import the project from github
 
-3. Create a virtual machine (VM) in google cloud
+# 3. Create a virtual machine (VM) in google cloud
 
-4. SSH into VM `ssh -p port# -i /path/to/private_key.pem username@server_IP`
+# 4. SSH into VM `ssh -p port# -i /path/to/private_key.pem username@server_IP`
 
-5. Update the machine `sudo apt update -y;sudo apt upgrade -y`
+# 5. Update the machine `sudo apt update -y;sudo apt upgrade -y`
 
-6. clone, configure, and set global pyenv
+# 6. clone, configure, and set global pyenv
 ```sh
 git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 
@@ -52,7 +49,7 @@ libncurses5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-de
 pyenv install 3.10.6
 pyenv global 3.10.6
 ```
-7. Set up SSH Keys for Github and your server to clone the project
+# 7. Set up SSH Keys for Github and your server to clone the project
 ```sh
 #server side run the following
 -ssh-keygen -t rsa -b 4096 -C "your_email@example.com" #generating the key
@@ -67,7 +64,7 @@ cd ~/
 
 git clone git clone git@github.com:WorkingOnTheName/portfolio.git
 ```
-8. Creating a virtual environment and installing depandancies for the app
+# 8. Creating a virtual environment and installing depandancies for the app
 ```sh
 cd app
 python -m venv env
@@ -75,7 +72,7 @@ source env/bin/activate
 pip install --upgrade pip
 pip install -r requirements.txt
 ```
-9. Create a systemD service file for the app
+# 9. Create a systemD service file for the app
 ```sh
 #Create systemD unit file
 sudo nano /etc/systemd/system/app.service
@@ -105,7 +102,7 @@ sudo systemctl start app
 sudo systemctl enable app
 ```
 
-10. NGINX
+# 10. NGINX
 ```sh
 #Install
 sudo apt install nginx
@@ -131,9 +128,21 @@ sudo nginx -t
 #restart the NGINX service (always restart services after making changes)
 sudo systemctl restart nginx
 ```
-11. Restart the vm, and SSH back in
+# 11. Add SSL encryption with certbot
+```sh
+sudo snap install core; sudo snap refresh core
+sudo snap install --classic certbot
+sudo ln -s /snap/bin/certbot /usr/bin/certbot
+sudo certbot --nginx -d eissahaidar.com -d www.eissahaidar.com
 
-12. Install and configure postgres
+sudo ufw allow 'Nginx Full'
+sudo ufw delete allow 'Nginx HTTP'
+sudo systemctl restart nginx
+``` 
+
+# 12. Restart the vm, and SSH back in
+
+# 13. Install and configure postgres
 ```sh
 sudo apt update
 sudo apt -y install postgresql postgresql-client postgresql-contrib
@@ -153,10 +162,9 @@ listen_addresses = '*'
 #save and exit with ctrl+c, y, enter
 sudo service postgresql restart
 ```
-13. Open port for postgres on VM using UFW (uncomplicated fire wall) and create 
-postgres firewall rule on google cloud
+# 13. Open port for postgres on VM using UFW (uncomplicated fire wall) and create postgres firewall rule on google cloud
 
-14. Create Postgres Database and populate it with tables. 
+# 14. Create Postgres Database and populate it with tables
 
 I wont show all of the SQL Quesries I ran in my code, but I will paste one piece
 that I used to calculate highrisk customers. 
