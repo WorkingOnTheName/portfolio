@@ -1,7 +1,7 @@
 # Purpose
 
 This project is a portfolio designed to showcase my backend and front end 
-abilities as well as my operations proficinecy. In essence it is a mock version
+abilities as well as my operations proficiency. In essence it is a mock version
 of a web application I built to help visualize data for a business. All data in
 this portfolio is fake and randomized. The portfolio is a simpler and
 streamlined version to highlight my skills and not be too repetitive.
@@ -26,7 +26,7 @@ streamlined version to highlight my skills and not be too repetitive.
 
 ### 1. Create Flask Web Application (run.py, config.py, __init__.py, views.py, html templates, CSS, etc.)
 
-### 2. `pip freeze > requirements.txt` so that all dependancies for the flask web app can be installed on the Virtual Machine when we import the project from github
+### 2. `pip freeze > requirements.txt` so that all dependencies for the flask web app can be installed on the Virtual Machine when we import the project from github
 
 ### 3. Create a virtual machine (VM) in google cloud
 
@@ -60,12 +60,12 @@ pyenv global 3.10.6
 #Add the public key to github account... settings>SSH & GPG Keys > New SSH 
 #paste the contents of public key into the text box
 
-#now clow the project in the home dorectory
+#now clone the project in the home directory
 cd ~/
 
 git clone git clone git@github.com:WorkingOnTheName/portfolio.git
 ```
-### 8. Creating a virtual environment and installing depandancies for the app
+### 8. Creating a virtual environment and installing dependencies for the app
 ```sh
 cd app
 python -m venv env
@@ -167,8 +167,8 @@ sudo service postgresql restart
 
 ### 14. Create Postgres Database and populate it with tables
 
-I wont show all of the SQL Quesries I ran in my code, but I will paste one piece
-that I used to calculate highrisk customers. 
+I wont show all of the SQL Queries I ran in my code, but I will paste one piece
+that I used to calculate high risk customers. 
 
 ```sh
 #make a table for all transactions from the latest date to the past year based
