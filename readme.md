@@ -19,6 +19,7 @@ streamlined version to highlight my skills and not be too repetitive.
 - uWSGI
 - Linux Terminal
 
+### website preview
 ![screenshot of the website](app_folder/static/img/charts.png)
 
 # The Process of Setting Up This Flask Web Application
