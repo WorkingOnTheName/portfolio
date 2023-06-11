@@ -48,11 +48,13 @@ code below into the appropriate blocks for positioning in the file. -->
         <div>{{monthly_low_plot|safe}}</div>
     </div>
 </div>
-<!-- My resume pdf being inserted into the webpage below the plotly charts -->
+<img id="resume" src="../../static/img/EissaHaidar_Resume_2023_web.jpg" alt="resume">
+
+<!-- My resume pdf being inserted into the webpage below the plotly charts
 <iframe id="pdf-iframe" src="../../static/pdf/EissaHaidar_Resume.pdf"></iframe>
-<!-- The script that resizes the iframe object and maintains the proper ratio
+The script that resizes the iframe object and maintains the proper ratio
 as an A4 sheet of paper. -->
-<script>
+<!-- <script>
     const iframe = document.getElementById("pdf-iframe");
     function resizeIframe() {
         const width = iframe.offsetWidth;
@@ -65,5 +67,5 @@ as an A4 sheet of paper. -->
     // Call resizeIframe() when the page loads and when the window is resized
     window.addEventListener("load", resizeIframe);
     window.addEventListener("resize", resizeIframe);
-</script>
+</script> -->
 {%endblock main%}

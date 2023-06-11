@@ -29,15 +29,15 @@ def portfolio():
     # Using pandas read_sql method and passing engine to it as connection.
     # Currently we are making a dataframe for the chart that will show
     # Daily Sum per day for each location or daily_tx_df
-    daily_tx_df = pd.read_sql(""" SELECT "Date"::DATE, "ATM", SUM("Cash") 
+    daily_tx_df = pd.read_sql(""" SELECT "Date"::DATE, "Location", SUM("Cash") 
         FROM portfolio_data 
-        GROUP BY "Date"::DATE, "ATM" ORDER BY "ATM" """, con=engine)
+        GROUP BY "Date"::DATE, "Location" ORDER BY "Location" """, con=engine)
 
     # Convert the Date collumn to a format acceptable for pandas
     # Then we use plotly express to make a scatter plot with the data frame
     daily_tx_df["Date"] = pd.to_datetime(daily_tx_df["Date"])
-    daily_tx_fig = px.scatter(daily_tx_df, x="Date", y="sum", color="ATM",
-    labels={'x': 'Date', 'y': 'Daily Sum'}, title='Daily Sum Per Location')
+    daily_tx_fig = px.scatter(daily_tx_df, x="Date", y="sum", color="Location",
+    labels={'x': 'Date', 'y': 'Daily Sum'}, title='Double-Click Legend Items to Isolate Series')
     # Make the figure object taller than defualt 450px and center title
     daily_tx_fig.update_layout(title_x=0.5, title_font_size=30, height=600)
     # Add a range slider + buttons for different views of the data
@@ -62,8 +62,8 @@ def portfolio():
                                  con=engine)
     # Creating a figure with plotly express and passing in above dataframe
     monthly_low_fig = px.bar(monthly_low_df, x="Month", y="Monthly Total",
-    color="ATM", barmode="overlay", labels={'x': 'Date', 'y': 'Monthly Sum'},
-    title='Low Performer Monthly Sum')
+    color="Location", barmode="overlay", labels={'x': 'Date', 'y': 'Monthly Sum'},
+    title='Interactive Bar Chart')
     #making the bar chart tallerand centering the title
     monthly_low_fig.update_layout(title_x=0.5, title_font_size=30, height=600)
     # telling the figure to make the bar width 2103840000 miliseconds wide
@@ -80,7 +80,7 @@ def portfolio():
 
     # Putting both pie charts side by side using a subplot
     pie_figs = sp.make_subplots(rows=1, cols=2, 
-    subplot_titles=("Transaction Volume", "Cash Sum"),
+    subplot_titles=("Volume", "Price"),
     specs=[[{'type': 'domain'}, {'type': 'domain'}]])
 
     pie_figs.add_trace(go.Pie(labels=pie_tx_df.columns,

@@ -21,10 +21,10 @@ plot which would be the bar chart of all the lowest performing locations.*/
 .tb_contain {
     padding: 0.5%;
     margin: 0.5%;
-    background-image: url("../img/darkblue.jpg");
     height: 30%;
     display: inline-block;
     width: 100%;
+    border: 2px solid black;
 }
 
 /* This container is sandwietched between the two tb_containers. This houses
@@ -33,13 +33,13 @@ customers.*/
 .middle_contain {
     padding: 0.5%;
     margin: 0.5%;
-    background-image: url("../img/darkblue.jpg");
     height: 30%;
     display: inline-block;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: stretch;
+    border: 2px solid black;
 }
 
 /* This container is for the pie subplot plotly object that is sitting side by
@@ -102,7 +102,7 @@ shrinks the font size becomes smaller so that the table can also shrink. */
 /* This is giving a basic sizing for the pdf file which is my resume. Most of
 the resizing magic happens in the html file with a js script that maintains a
 length to width ratio which is the same as an A4 sheet of paper. */
-#pdf-iframe {
+/* #pdf-iframe {
     margin: 0 auto;
     display: block;
     padding: 0.5%;
@@ -110,4 +110,12 @@ length to width ratio which is the same as an A4 sheet of paper. */
     height: 100%;
     border: none;
     background-image: url("../img/water.jpg");
+} */
+#resume {
+    margin: 0 auto;
+    display: block;
+    padding: 0.5%;
+    width: 96%;
+    height: 100%;
+    border: none;
 }
