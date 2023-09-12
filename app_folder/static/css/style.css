@@ -119,3 +119,7 @@ length to width ratio which is the same as an A4 sheet of paper. */
     height: 100%;
     border: none;
 }
+
+.links{
+    text-align: center;
+}
